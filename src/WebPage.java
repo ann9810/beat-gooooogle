@@ -10,7 +10,7 @@ public class WebPage {
 	public WebPage(String url, String name) {
 		this.url = url;
 		this.name = name;
-		this.counter = new WordCounter(url);
+		this.counter = new WordCounter();
 	}
 	
 	public void setScore(ArrayList<Keyword> keywords) throws IOException {

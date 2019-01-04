@@ -11,8 +11,9 @@ public class Main {
 		
 		
 		Scanner sc = new Scanner(System.in);
-		String keyword = sc.nextLine();
-		WordCounter wordcounter = new WordCounter("keyword");
+		WordCounter wordcounter = new WordCounter();
+		String kword = sc.next();
+		wordcounter.countKeyword(kword);
 		
 	}
 }
