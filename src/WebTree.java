@@ -18,24 +18,4 @@ public class WebTree {
 		
 	}
 	
-	public void printTree() {
-		printTree(root);
-	}
-	
-	private void printTree(WebNode startNode) {
-		for(int i =0; i<startNode.getDepth();i++){System.out.print("  ");}
-
-		if(startNode.children.isEmpty()){
-		System.out.println("("+startNode.webPage.name+","+startNode.nodeScore+ ")") ;
-		}
-		else{ 
-		System.out.println("("+startNode.webPage.name+","+startNode.nodeScore);
-		for(WebNode child : startNode.children){
-		printTree(child);
-		}
-		for(int i =0; i<startNode.getDepth();i++){
-		System.out.print("  ");
-		}System.out.println(")");
-		}
-	}
 }
