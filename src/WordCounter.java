@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 public class WordCounter {
 	private String url;
-	private String content;
+	private ArrayList<String> content;
+	String conte;
 	private ArrayList<String> urls = new ArrayList<String>();
 	
 	String HM = "https://www2.hm.com/zh_asia3/ladies.html";
@@ -25,14 +26,14 @@ public class WordCounter {
 	
 	
 	
-	private String fetchContent()throws IOException{
-		
-		for(String url: urls) {
-		
-		}
-		
+	private ArrayList<String> fetchContent()throws IOException{
+		ArrayList<String> content = new ArrayList<String>();
+		for(int i = 0; i < urls.size(); i++) {
+		this.url = urls.get(i);
 		URL url = new URL(this.url);
+		//connect
 		URLConnection conn = url.openConnection();
+		//read
 		InputStream in = conn.getInputStream();
 		BufferedReader br = new BufferedReader(new InputStreamReader(in));
 		
@@ -42,20 +43,27 @@ public class WordCounter {
 		while((line=br.readLine())!=null) {
 			retVAL= retVAL+line +"\n";
 		}
-		return retVAL;
+		content.add(retVAL);
+		}
+		
+		return content;
 	}
 	
 	public int countKeyword(String kword)throws IOException{
 		if(content==null) {
 			content = fetchContent();
 		}
-		content =content.toUpperCase();
+		for(int i = 0; i < content.size(); i++) {
+			String con = content.get(i);
+			this.conte =con.toUpperCase();
+		}
+		
 		kword = kword.toUpperCase();
 		
 		int retVAL=0;
 		int fromIdx =0;
 		int found= -1;
-		while((found=content.indexOf(kword,fromIdx))!=-1) {
+		while((found=conte.indexOf(kword,fromIdx))!=-1) {
 			retVAL++;
 			fromIdx= found+kword.length();
 			
