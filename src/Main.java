@@ -13,7 +13,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		WordCounter wordcounter = new WordCounter();
 		String kword = sc.next();
-		wordcounter.countKeyword(kword);
-		
+		int c = wordcounter.countKeyword(kword);
+		System.out.print(c);
 	}
 }

@@ -10,6 +10,7 @@ public class WordCounter {
 	private String url;
 	private ArrayList<String> content;
 	String conte;
+	int score;
 	private ArrayList<String> urls = new ArrayList<String>();
 	
 	String HM = "https://www2.hm.com/zh_asia3/ladies.html";
@@ -68,7 +69,6 @@ public class WordCounter {
 			fromIdx= found+kword.length();
 			
 		}
-		
 		return retVAL;
 	}
 }
