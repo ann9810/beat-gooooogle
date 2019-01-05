@@ -16,7 +16,7 @@ public class Main {
 		int c = wordcounter.countKeyword(kword);
 		System.out.print(c);
 		
-		WebPage rootPage = new WebPage("http://soslab.nccu.edu.tw/Welcome.html", "Welcome");
+		WebPage rootPage = new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "ZARA");
 		WebTree tree = new WebTree(rootPage);
 		
 		tree.root.addChild(new WebNode(new WebPage("http://soslab.nccu.edu.tw/Welcome.html", "Project")));
@@ -28,7 +28,6 @@ public class Main {
 
 		
 		while(sc.hasNextLine()) {
-			//把輸進來的關鍵字存進keywords
 			ArrayList <Keyword> keywords = new ArrayList<>();
 			String name = sc.next();
 				Keyword k = new Keyword(name);
