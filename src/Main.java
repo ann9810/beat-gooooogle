@@ -16,8 +16,19 @@ public class Main {
 		int c = wordcounter.countKeyword(kword);
 		System.out.print(c);
 		
-		WebPage rootPage = new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "ZARA");
-		WebTree tree = new WebTree(rootPage);
+		WebPage rootPageZARA = new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "ZARA");
+		WebTree treeZARA = new WebTree(rootPageZARA);
+		
+		WebPage rootPageHM = new WebPage("https://www2.hm.com/zh_asia3/index.html", "H&M");
+		WebTree treeHM = new WebTree(rootPageHM);
+		
+		WebPage rootPageOB = new WebPage("https://www.obdesign.com.tw/", "OB");
+		WebTree treeOB = new WebTree(rootPageOB);
+		
+		WebPage rootPageBuerberry = new WebPage("https://tw.burberry.com/", "Burberry");
+		WebTree treeBurberry = new WebTree(rootPageBurberry);
+		
+		
 		
 		tree.root.addChild(new WebNode(new WebPage("http://soslab.nccu.edu.tw/Welcome.html", "Project")));
 		tree.root.addChild(new WebNode(new WebPage("http://soslab.nccu.edu.tw/Publications.html", "Publication")));
