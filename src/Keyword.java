@@ -4,9 +4,8 @@ public class Keyword {
 	public int count;
 	
 	
-	public Keyword(String name, int count) {
+	public Keyword(String name) {
 		this.name = name;	
-		this.count = count;
 	}
 	
 	
