@@ -13,7 +13,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		WordCounter wordcounter = new WordCounter();
 		String kword = sc.next();
-		int c = wordcounter.countKeyword(kword);
+		ArrayList<Integer> c = wordcounter.countKeyword(kword);
 		System.out.print(c);
 		
 		WebPage rootPageZARA = new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "ZARA");
@@ -22,8 +22,8 @@ public class Main {
 		WebPage rootPageHM = new WebPage("https://www2.hm.com/zh_asia3/index.html", "H&M");
 		WebTree treeHM = new WebTree(rootPageHM);
 		
-		WebPage rootPageOB = new WebPage("https://www.obdesign.com.tw/", "OB");
-		WebTree treeOB = new WebTree(rootPageOB);
+		//WebPage rootPageOB = new WebPage("https://www.obdesign.com.tw/", "OB");
+		//WebTree treeOB = new WebTree(rootPageOB);
 		
 		WebPage rootPageBurberry = new WebPage("https://tw.burberry.com/", "Burberry");
 		WebTree treeBurberry = new WebTree(rootPageBurberry);
@@ -46,9 +46,9 @@ public class Main {
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-jackets-l1114.html?v1=1178995", "夾克外套")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-blazers-l1055.html", "西裝外套")));
 		
-		treeOB.root.addChild(new WebNode(new WebPage("https://www.obdesign.com.tw/inpage.aspx?no=6964", "女")));
-		treeOB.root.children.get(0).addChild(new WebNode(new WebPage("https://www.obdesign.com.tw/inpage.aspx?no=7001", 
-				"外套")));
+		//treeOB.root.addChild(new WebNode(new WebPage("https://www.obdesign.com.tw/inpage.aspx?no=6964", "女")));
+		//treeOB.root.children.get(0).addChild(new WebNode(new WebPage("https://www.obdesign.com.tw/inpage.aspx?no=7001", 
+				//"外套")));
 		
 		
 		
@@ -62,7 +62,7 @@ public class Main {
 				treeBurberry.setPostOrderScore(keywords);
 				treeHM.setPostOrderScore(keywords);
 				treeZARA.setPostOrderScore(keywords);
-				treeOB.setPostOrderScore(keywords);
+				//treeOB.setPostOrderScore(keywords);
 			}
 			sc.close();
 		}
