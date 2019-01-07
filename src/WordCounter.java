@@ -12,6 +12,8 @@ public class WordCounter {
 	String conte;
 	int score;
 	private ArrayList<String> urls = new ArrayList<String>();
+	private ArrayList<String> contearray = new ArrayList<>();
+	private ArrayList<Integer> retVALarr = new ArrayList<>();
 	
 	String HM = "https://www2.hm.com/zh_asia3/ladies.html";
 	String ZARA = "https://www.zara.com/tw/zt/woman-l1000.html?v1=791035";
@@ -56,18 +58,22 @@ public class WordCounter {
 		}
 		for(int i = 0; i < content.size(); i++) {
 			String con = content.get(i);
-			this.conte =con.toUpperCase();
+			conte =con.toUpperCase();
+			contearray.add(conte);
 		}
 		
 		kword = kword.toUpperCase();
 		
-		int retVAL=0;
 		int fromIdx =0;
 		int found= -1;
-		while((found=conte.indexOf(kword,fromIdx))!=-1) {
+		int retVAL= 0;
+		for(int i = 0; i < contearray.size(); i++) {
+			retVALarr.add(i, retVAL);
+			retVAL=0;
+		while((found=contearray.get(i).indexOf(kword,fromIdx))!=-1) {
 			retVAL++;
 			fromIdx= found+kword.length();
-			
+			}
 		}
 		return retVAL;
 	}

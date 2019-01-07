@@ -26,14 +26,4 @@ public class WebNode {
 		child.parent = this;
 	}
 	
-	public int getDepth() {
-		int retVal = 1;
-		WebNode curNode = this;
-		
-		while(curNode.parent != null) {
-			retVal ++;
-			curNode = curNode.parent;
-		}
-		return retVal;
-	}
 }
