@@ -17,17 +17,13 @@ public class WordCounter {
 	
 	String HM = "https://www2.hm.com/zh_asia3/ladies.html";
 	String ZARA = "https://www.zara.com/tw/zt/woman-l1000.html?v1=791035";
-	//String OB = "https://www.obdesign.com.tw/";
 	String Burberry = "https://tw.burberry.com/";
 	
 	public WordCounter() {
 	urls.add(HM);
 	urls.add(ZARA);
-	//urls.add(OB);
 	urls.add(Burberry);
 	}
-	
-	
 	
 	private ArrayList<String> fetchContent()throws IOException{
 		ArrayList<String> content = new ArrayList<String>();
@@ -67,17 +63,18 @@ public class WordCounter {
 		
 		kword = kword.toUpperCase();
 		
-		for(int i = 0; i < contearray.size() + 1; i++) {
+		for(int i = 0; i < contearray.size(); i++) {
 			int fromIdx =0;
 			int found= -1;
 			int retVAL= 0;
-		while((found=contearray.get(i).indexOf(kword,fromIdx))!=-1) {
+		while((found=contearray.get(i).indexOf(kword,fromIdx))!= -1) {
 			retVAL++;
 			fromIdx= found+kword.length();
 			}
 		retVALarr.add(retVAL);
 		}
-		 
+		
+		System.out.println(retVALarr);
 		return retVALarr;
 	}
 }

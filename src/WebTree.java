@@ -18,4 +18,11 @@ public class WebTree {
 		
 	}
 	
+	public void print() {
+		printTree(root);
+	}
+
+	private void printTree(WebNode startNode) {
+		System.out.print( startNode.webPage.name +" "+ startNode.nodeScore);
+	}
 }

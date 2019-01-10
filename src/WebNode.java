@@ -6,6 +6,7 @@ public class WebNode {
 	public ArrayList<WebNode>children;
 	public WebPage webPage;
 	public int nodeScore;
+	public int[]scoreRank;
 	
 	public WebNode(WebPage webPage) {
 		this.webPage = webPage;
@@ -25,5 +26,10 @@ public class WebNode {
 		this.children.add(child);
 		child.parent = this;
 	}
+	
+	public void rank() {
+		
+	}
+	
 	
 }
