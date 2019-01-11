@@ -7,10 +7,10 @@ public class WebTree {
 		this.root = new WebNode(rootPage);
 	}
 	
-	public void setPostOrderScore(ArrayList<Keyword>keywords) throws IOException {
+	public void setPostOrderScore(ArrayList<String>keywords) throws IOException {
 		setPostOrderScore(root, keywords);
 	}
-	private void setPostOrderScore(WebNode startNode, ArrayList<Keyword>keywords) throws IOException {
+	private void setPostOrderScore(WebNode startNode, ArrayList<String>keywords) throws IOException {
 		startNode.setNodeScore(keywords);
 		for(WebNode child: startNode.children) {
 			setPostOrderScore(child, keywords);
