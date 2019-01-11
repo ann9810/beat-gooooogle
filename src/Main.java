@@ -41,6 +41,8 @@ public class Main {
 				Keyword k = new Keyword(name);
 				keywords.add(k);
 				//rootPageBurberry.setScore(keywords);
+				rootPageZARA.setScore(keywords);
+				rootPageHM.setScore(keywords);
 //				treeBurberry.setPostOrderScore(keywords);
 //				treeHM.setPostOrderScore(keywords);
 //				treeHM.printTree();
