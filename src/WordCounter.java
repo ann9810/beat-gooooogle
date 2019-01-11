@@ -73,8 +73,6 @@ public class WordCounter {
 			}
 		retVALarr.add(retVAL);
 		}
-		
-		System.out.println(retVALarr);
 		return retVALarr;
 	}
 }

@@ -15,10 +15,7 @@ public class QuickSort {
 			int l = left;
 			int r = right - 1;
 			int p = array[right];
-			//System.out.println("left:" + left + " right:" + right);
 		do {
-			
-			//System.out.println("r " + r + "," + l);
 			if(array[l] < p)
 				l++;
 			
@@ -40,9 +37,9 @@ public class QuickSort {
 				swap(array,r,right);
 			}
 			print(array);
-			//if(r>left) 
+			if(r>left) 
 				sort(array,left, r-1);
-			//if(r<right)
+			if(r<right)
 				sort(array, r+1,right);
 		}
 		public static void swap(int a[], int i, int j) {
@@ -55,14 +52,6 @@ public class QuickSort {
 			for(int i = 0; i < arra.length; i++)
 				System.out.print(arra[i] + " ");
 				System.out.println();
-		}
-		public static void main(String[] args) {
-
-			int b[] = {6, 9, 8, 12, 18 ,7, 2, 3, 10};
-//			int b[] = {6, 9};
-			System.out.println(Arrays.toString(b));
-		    sort(b,0,b.length-1);
-		    System.out.println(Arrays.toString(b));
 		}
 
 }

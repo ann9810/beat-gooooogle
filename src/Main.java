@@ -8,13 +8,9 @@ import javax.swing.plaf.basic.BasicTreeUI.TreeCancelEditingAction;
 public class Main {
 
 	public static void main(String[] args) throws IOException{
-		
-		
 		Scanner sc = new Scanner(System.in);
+		
 		WordCounter wordcounter = new WordCounter();
-		String kword = sc.next();
-		ArrayList<Integer> c = wordcounter.countKeyword(kword);
-		System.out.print(c);
 		
 		WebPage rootPageZARA = new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "ZARA");
 		WebTree treeZARA = new WebTree(rootPageZARA);
@@ -44,11 +40,13 @@ public class Main {
 			String name = sc.next();
 				Keyword k = new Keyword(name);
 				keywords.add(k);
-				treeBurberry.setPostOrderScore(keywords);
-				treeHM.setPostOrderScore(keywords);
+				//rootPageBurberry.setScore(keywords);
+//				treeBurberry.setPostOrderScore(keywords);
+//				treeHM.setPostOrderScore(keywords);
+//				treeHM.printTree();
 			}
 			sc.close();
-			treeZARA.print();
+			//treeZARA.printTree();
 			
 			//QuickSort(scorerank, 0, scorerank.lingth());
 		}

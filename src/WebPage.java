@@ -20,7 +20,8 @@ public class WebPage {
 	public void setScore(ArrayList<Keyword> keywords) throws IOException {
 		int z = 0;
 		for(int i = 0; i < keywords.size(); i++) {
-			this.score += counter.countKeyword(keywords.get(i).name).get(i) * weight[i];
+			this.score = counter.countKeyword(keywords.get(i).name).get(i) * weight[i];
+			System.out.println(score);
 			}
 			
 		}

@@ -17,9 +17,13 @@ public class WebNode {
 		webPage.setScore(keywords);
 		this.nodeScore = webPage.score;
 		
+		System.out.println(webPage.name);
+		System.out.println(nodeScore);
 		for(WebNode child : children) {
 			this.nodeScore += child.nodeScore;
 		}
+//		System.out.println(webPage.name);
+//		System.out.println(nodeScore);
 	}
 	
 	public void addChild(WebNode child) {
