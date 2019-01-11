@@ -36,19 +36,19 @@ public class Main {
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-outerwear-l1184.html?v1=1179522", "大衣")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-jackets-l1114.html?v1=1178995", "夾克外套")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-blazers-l1055.html", "西裝外套")));
-		
+	
 		while(sc.hasNextLine()) {
 			String name = sc.nextLine();
 			
 				wordcountZARA.splitKeywordStr(name);
 				wordcountHM.splitKeywordStr(name);
 				wordcountBurberry.splitKeywordStr(name);
-
+				
 				wordcountZARA.countKeyword(name);
 				wordcountHM.countKeyword(name);
 				wordcountBurberry.countKeyword(name);
 				
-				//rootPageZARA.setScore();
+				rootPageZARA.setScore(wordcountZARA.splitKeywordStr(name));
 			}
 			sc.close();
 			
