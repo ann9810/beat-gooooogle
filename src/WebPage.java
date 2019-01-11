@@ -20,9 +20,9 @@ public class WebPage {
 	
 	
 	
-//	public void setScore() throws IOException{
-//		for(int i = 0; i < keywordli.size(); i++) {
-//			this.score += counter.countKeyword(keywordli.get(i)) * weight[i];
-//		}
-//		}
+	public void setScore(ArrayList<String> keywordli) throws IOException{
+		for(int i = 0; i < keywordli.size(); i++) {
+			this.score += counter.countKeyword(keywordli.get(i)) * weight[i];
+		}
+		}
 }

@@ -41,8 +41,10 @@ public class WordCount {
 	
 	
 	public ArrayList<String> splitKeywordStr(String keywordStr) {
-		this.keywordli = new ArrayList<>(Arrays.asList(keywordStr.split("\\s")));
-		System.out.println(keywordli.size());
+		String[] k = keywordStr.split("\\s+");
+		this.keywordli = new ArrayList<>(Arrays.asList(keywordStr.split("\\s+")));
+		System.out.println(k.length);
+		//System.out.println(keywordli.size());
 		return keywordli;
 		
 	}

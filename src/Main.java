@@ -10,9 +10,9 @@ public class Main {
 	public static void main(String[] args) throws IOException{
 		Scanner sc = new Scanner(System.in);
 		
-		WordCount wordcounterZARA = new WordCount("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035");
-		WordCount wordcounterHM = new WordCount("https://www2.hm.com/zh_asia3/ladies.html");
-		WordCount wordcounterBurberry = new WordCount("https://tw.burberry.com/");
+		WordCount wordcountZARA = new WordCount("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035");
+		WordCount wordcountHM = new WordCount("https://www2.hm.com/zh_asia3/ladies.html");
+		WordCount wordcountBurberry = new WordCount("https://tw.burberry.com/");
 		
 		WebPage rootPageZARA = new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "ZARA");
 		WebTree treeZARA = new WebTree(rootPageZARA);
@@ -38,10 +38,16 @@ public class Main {
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-blazers-l1055.html", "西裝外套")));
 		
 		while(sc.hasNextLine()) {
-			String name = sc.next();
-				wordcounterZARA.countKeyword(name);
-				wordcounterHM.countKeyword(name);
-				wordcounterBurberry.countKeyword(name);
+			String name = sc.nextLine();
+			
+				wordcountZARA.splitKeywordStr(name);
+				wordcountHM.splitKeywordStr(name);
+				wordcountBurberry.splitKeywordStr(name);
+
+				wordcountZARA.countKeyword(name);
+				wordcountHM.countKeyword(name);
+				wordcountBurberry.countKeyword(name);
+				
 				//rootPageZARA.setScore();
 			}
 			sc.close();
