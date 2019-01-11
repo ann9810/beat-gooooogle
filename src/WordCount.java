@@ -23,8 +23,6 @@ public class WordCount {
 	private String fetchContent() throws IOException {
 		URL url = new URL(this.urlStr);
 		
-		System.out.println(this.urlStr);
-		
 		URLConnection conn = url.openConnection();
 		InputStream in = conn.getInputStream();
 		BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -37,13 +35,10 @@ public class WordCount {
 		}
 		return retVal;
 	}
-	
-	
-	
+
 	public ArrayList<String> splitKeywordStr(String keywordStr) {
 		String[] k = keywordStr.split("\\s+");
 		this.keywordli = new ArrayList<>(Arrays.asList(keywordStr.split("\\s")));
-		System.out.println(k.length);
 		for(int i = 0; i < keywordli.size(); i++)
 		System.out.print("[" + keywordli.get(i) + "]");
 		return keywordli;
@@ -59,7 +54,6 @@ public ArrayList<Integer> countKeyword(String keyword) throws IOException {
 		}
 		content = content.toUpperCase();
 		keyword = keyword.toUpperCase();
-		
 		
 		for(int t = 0; t < keywordli.size(); t++) {
 		int count = 0;

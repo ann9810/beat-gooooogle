@@ -40,15 +40,16 @@ public class Main {
 		while(sc.hasNextLine()) {
 			String name = sc.nextLine();
 			
-				wordcountZARA.splitKeywordStr(name);
-				wordcountHM.splitKeywordStr(name);
-				wordcountBurberry.splitKeywordStr(name);
 				
+				wordcountZARA.splitKeywordStr(name);
 				wordcountZARA.countKeyword(name);
-				wordcountHM.countKeyword(name);
+				
+				wordcountBurberry.splitKeywordStr(name);
 				wordcountBurberry.countKeyword(name);
 				
-				rootPageZARA.setScore(wordcountZARA.splitKeywordStr(name));
+				wordcountHM.splitKeywordStr(name);
+				wordcountHM.countKeyword(name);
+				//rootPageZARA.setScore(wordcountZARA.splitKeywordStr(name));
 			}
 			sc.close();
 			
