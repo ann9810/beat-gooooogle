@@ -13,8 +13,8 @@ public class WebNode {
 		this.children = new ArrayList<WebNode>();
 	}
 	
-	public void setNodeScore(ArrayList<String> keywordli) throws IOException {
-		webPage.setScore(keywordli);
+	public void setNodeScore(ArrayList<Integer> countli) throws IOException {
+		webPage.setScore(countli);
 		this.nodeScore = webPage.score;
 		
 		System.out.println(webPage.name);

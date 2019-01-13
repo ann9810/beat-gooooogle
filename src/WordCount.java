@@ -8,6 +8,9 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 public class WordCount {
 
 	private String urlStr;
@@ -33,16 +36,18 @@ public class WordCount {
 		while((line = br.readLine()) != null) {
 			retVal = retVal + line + "\n" ;
 		}
-		return retVal;
+		Document retValStr = Jsoup.parse(retVal);
+		String retValText = retValStr.text();
+		//System.out.println(retValText);
+		return retValText;
 	}
 
-	public ArrayList<String> splitKeywordStr(String keywordStr) {
+	private ArrayList<String> splitKeywordStr(String keywordStr) {
 		String[] k = keywordStr.split("\\s+");
 		this.keywordli = new ArrayList<>(Arrays.asList(keywordStr.split("\\s")));
 		for(int i = 0; i < keywordli.size(); i++)
 		System.out.print("[" + keywordli.get(i) + "]");
 		return keywordli;
-		
 	}
 	
 	public ArrayList<Integer> countList = new ArrayList<>();
@@ -55,10 +60,11 @@ public ArrayList<Integer> countKeyword(String keyword) throws IOException {
 		content = content.toUpperCase();
 		keyword = keyword.toUpperCase();
 		
+		splitKeywordStr(keyword);
+		
 		for(int t = 0; t < keywordli.size(); t++) {
 		int count = 0;
 		int i = content.indexOf(keywordli.get(t));
-		
 		while(i != -1) {
 			i = content.indexOf(keywordli.get(t));
 			content = content.substring(i + keywordli.get(t).length(), content.length());

@@ -5,21 +5,24 @@ import java.util.Arrays;
 public class WebPage {
 	public String url;
 	public String name;
-	public WordCount counter;
-	public int score;
+	public WordCount count;
+	public int score = 0;
 	
-	private int[] weight = {12, 8, 4};
+	private int[] weight = {3, 2, 1};
 	
 	
 	public WebPage(String url, String name) {
 		this.url = url;
 		this.name = name;
-		this.counter = new WordCount(url);
+		this.count = new WordCount(url);
 	}
 	
-	public void setScore(ArrayList<String> keywordli) throws IOException{
-		for(int i = 0; i < keywordli.size(); i++) {
-			this.score += counter.countKeyword(keywordli.get(i)).get(i) * weight[i];
+	ArrayList<Integer> countList = new ArrayList<>();
+	
+	public void setScore(ArrayList<Integer> countList) throws IOException{
+		for(int i = 0; i < countList.size(); i++) {
+			this.score += countList.get(i) * weight[i];
 		}
+		System.out.println(score);
 		}
 }

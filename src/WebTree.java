@@ -7,13 +7,13 @@ public class WebTree {
 		this.root = new WebNode(rootPage);
 	}
 	
-	public void setPostOrderScore(ArrayList<String>keywords) throws IOException {
-		setPostOrderScore(root, keywords);
+	public void setPostOrderScore(ArrayList<Integer>countli) throws IOException {
+		setPostOrderScore(root, countli);
 	}
-	private void setPostOrderScore(WebNode startNode, ArrayList<String>keywords) throws IOException {
-		startNode.setNodeScore(keywords);
+	private void setPostOrderScore(WebNode startNode, ArrayList<Integer>countli) throws IOException {
+		startNode.setNodeScore(countli);
 		for(WebNode child: startNode.children) {
-			setPostOrderScore(child, keywords);
+			setPostOrderScore(child, countli);
 		}
 		System.out.println(startNode.nodeScore);
 	}
