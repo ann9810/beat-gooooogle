@@ -11,10 +11,10 @@ public class WebTree {
 		setPostOrderScore(root, countli);
 	}
 	private void setPostOrderScore(WebNode startNode, ArrayList<Integer>countli) throws IOException {
-		startNode.setNodeScore(countli);
 		for(WebNode child: startNode.children) {
 			setPostOrderScore(child, countli);
 		}
+		startNode.setNodeScore(countli);
 		System.out.println(startNode.nodeScore);
 	}
 	

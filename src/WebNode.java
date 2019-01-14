@@ -18,7 +18,7 @@ public class WebNode {
 		this.nodeScore = webPage.score;
 		
 		System.out.println(webPage.name);
-		System.out.println(nodeScore);
+		//System.out.println(nodeScore);
 		for(WebNode child : children) {
 			this.nodeScore += child.nodeScore;
 		}

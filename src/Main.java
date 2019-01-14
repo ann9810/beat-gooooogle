@@ -48,10 +48,10 @@ public class Main {
 				
 //				wordcountHM.splitKeywordStr(name);
 //				wordcountHM.countKeyword(name);
-				//wordcountZARA.countKeyword(name);
-				//rootPageZARA.setScore(countList);
+//				wordcountZARA.countKeyword(name);
+//				rootPageZARA.setScore(countList);
 			
-			treeZARA.setPostOrderScore(wordcountBurberry.countKeyword(name));
+			treeZARA.setPostOrderScore(countList);
 			}
 			sc.close();
 			
