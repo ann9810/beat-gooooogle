@@ -12,11 +12,16 @@ public class Main {
 		ArrayList<Integer> countListBurberry;
 		ArrayList<Integer> countListGenquo;
 		ArrayList<Integer> countListUR;
+		ArrayList<Integer> countListHM;
+		ArrayList<Integer> countListNET;
 		
 		WordCount wordcountZARA = new WordCount("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035");
 		WordCount wordcountGenquo = new WordCount("https://www.genquo.com/");
 		WordCount wordcountBurberry = new WordCount("https://tw.burberry.com/");
 		WordCount wordcountUrbanResearch = new WordCount("https://www.urban-research.tw");
+		WordCount wordcountHM = new WordCount("https://www2.hm.com/zh_asia3/index.html");
+		WordCount wordcountNET = new WordCount("https://www.net-fashion.net/");
+		
 		
 		WebPage rootPageZARA = new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "ZARA");
 		WebTree treeZARA = new WebTree(rootPageZARA);
@@ -30,18 +35,31 @@ public class Main {
 		WebPage rootPageUbResearch = new WebPage("https://www.urban-research.tw" , "Urban Research");
 		WebTree treeUR = new WebTree(rootPageUbResearch);
 		
-		treeBurberry.root.addChild(new WebNode(new WebPage("https://tw.burberry.com/women/", "女")));
+		WebPage rootPageHM = new WebPage("https://www2.hm.com/zh_asia3/index.html", "H&M");
+		WebTree treeHM = new WebTree(rootPageHM);
+		
+		WebPage rootPageNET = new WebPage("https://www.net-fashion.net/", "NET");
+		WebTree treeNET = new WebTree(rootPageNET);
+		
+		treeNET.root.addChild(new WebNode(new WebPage("https://www.net-fashion.net/category/1466", "女裝")));
+		treeNET.root.children.get(0).addChild(new WebNode(new WebPage("https://www.net-fashion.net/category/24", "外套大衣")));
+		
+		treeHM.root.addChild(new WebNode(new WebPage("https://www2.hm.com/zh_asia3/ladies.html", "女裝")));
+		treeHM.root.children.get(0).addChild(new WebNode(new WebPage("https://www2.hm.com/zh_asia3/ladies/shop-by-product/jackets-and-coats.html?product-type=ladies_jacketscoats&sort=stock&image-size=small&image=model&offset=0&page-size=504"
+				, "夾克及外套")));
+		
+		treeBurberry.root.addChild(new WebNode(new WebPage("https://tw.burberry.com/women/", "女裝")));
 		treeBurberry.root.children.get(0).addChild(new WebNode(new WebPage("https://tw.burberry.com/womens-coats-jackets/", "所有大衣及外套")));
 		
-		treeGenquo.root.addChild(new WebNode(new WebPage("https://www.genquo.com/WOMEN", "女")));
+		treeGenquo.root.addChild(new WebNode(new WebPage("https://www.genquo.com/WOMEN", "女裝")));
 		treeGenquo.root.children.get(0).addChild(new WebNode(new WebPage("https://www.genquo.com/WOMEN/TOP/JACKET", "外套")));
 		
-		treeZARA.root.addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "女")));
+		treeZARA.root.addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "女裝")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-outerwear-l1184.html?v1=1179522", "大衣")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-jackets-l1114.html?v1=1178995", "夾克外套")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-blazers-l1055.html", "西裝外套")));
 		
-		treeUR.root.addChild(new WebNode(new WebPage("https://www.urban-research.tw/item_list/?select_type=27&select_item=All_item", "women")));
+		treeUR.root.addChild(new WebNode(new WebPage("https://www.urban-research.tw/item_list/?select_type=27&select_item=All_item", "女裝")));
 		treeUR.root.children.get(0).addChild(new WebNode(new WebPage("https://www.urban-research.tw/item_list/?select_item=All_item&select_brand=19&select_type=27&select_category=31&keyword=", "外套")));
 		
 		while(sc.hasNextLine()) {
@@ -66,7 +84,16 @@ public class Main {
 			countListUR = wordcountUrbanResearch.countKeyword(name);
 			System.out.println(" "); 
 			treeUR.setPostOrderScore(name);
-			System.out.println(" ");
+			
+			System.out.print("H&M");
+			countListHM = wordcountHM.countKeyword(name);
+			System.out.println();
+			treeHM.setPostOrderScore(name);
+			
+			System.out.print("NET");
+			countListNET = wordcountNET.countKeyword(name);
+			System.out.println();
+			treeNET.setPostOrderScore(name);
 			}
 			sc.close();
 //			
