@@ -58,7 +58,7 @@ public class Main {
 //				wordcountZARA.countKeyword(name);
 //				rootPageZARA.setScore(countList);
 			
-			treeZARA.setPostOrderScore(countListZARA);
+			treeZARA.setPostOrderScore(name);
 			}
 			sc.close();
 			

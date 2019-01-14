@@ -13,12 +13,10 @@ public class WebNode {
 		this.children = new ArrayList<WebNode>();
 	}
 	
-	public void setNodeScore(ArrayList<Integer> countli) throws IOException {
-		webPage.setScore(countli);
+	public void setNodeScore(String kw) throws IOException {
+		webPage.setScore(kw);
 		this.nodeScore = webPage.score;
-		
 		System.out.print(webPage.name+" ");
-		//System.out.println(nodeScore);
 		for(WebNode child : children) {
 			this.nodeScore += child.nodeScore;
 		}

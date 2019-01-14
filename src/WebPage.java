@@ -20,6 +20,7 @@ public class WebPage {
 	ArrayList<Integer> countList = new ArrayList<>();
 	
 	public void setScore(String keyword) throws IOException{
+		
 		ArrayList<Integer> countList = count.countKeyword(keyword);
 		
 		for(int i = 0; i < countList.size(); i++) {
