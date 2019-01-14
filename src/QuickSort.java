@@ -3,7 +3,7 @@ import java.util.ArrayList;
 	
 public class QuickSort {
 
-		private static void sort(int[]array, int left, int right) {
+		static void sort(int[]array, int left, int right) {
 			if(left == right)
 				return;
 			if(left+1 == right) {
@@ -24,7 +24,7 @@ public class QuickSort {
 			
 			if(l < r && array[l]>p && array[r] < p) {
 				swap(array, l, r);
-				print(array);
+				//print(array);
 				l++;
 				r--;	
 			}
@@ -36,7 +36,7 @@ public class QuickSort {
 				r = r+1;
 				swap(array,r,right);
 			}
-			print(array);
+			//print(array);
 			if(r>left) 
 				sort(array,left, r-1);
 			if(r<right)

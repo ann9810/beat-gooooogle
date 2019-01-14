@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import javax.swing.plaf.basic.BasicTreeUI.TreeCancelEditingAction;
 
@@ -14,6 +15,9 @@ public class Main {
 		ArrayList<Integer> countListUR;
 		ArrayList<Integer> countListHM;
 		ArrayList<Integer> countListNET;
+		
+		ArrayList<Integer> score = new ArrayList<>();
+
 		
 		WordCount wordcountZARA = new WordCount("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035");
 		WordCount wordcountGenquo = new WordCount("https://www.genquo.com/");
@@ -94,24 +98,36 @@ public class Main {
 			countListNET = wordcountNET.countKeyword(name);
 			System.out.println();
 			treeNET.setPostOrderScore(name);
-			}
-			sc.close();
-//			
-//			WebNode zara = new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "zara"));
-//			WebNode burberry = new WebNode(new WebPage("https://tw.burberry.com/", "burberry"));
-//			WebNode genquo = new WebNode(new WebPage("https://www.genquo.com/", "genquo"));
 			
-			ArrayList<Integer> scoreRank = new ArrayList<>();
 			
 			int a = treeZARA.root.nodeScore;
 			int b = treeBurberry.root.nodeScore;
 			int c = treeGenquo.root.nodeScore;
+			int d = treeUR.root.nodeScore;
+			int e = treeHM.root.nodeScore;
+			int f = treeNET.root.nodeScore;
 			
-			scoreRank.add(a);
-			scoreRank.add(b);
-			scoreRank.add(c);
+			score.add(a);
+			score.add(b);
+			score.add(c);
+			score.add(d);
+			score.add(e);
+			score.add(f);
 			
-			System.out.println("score rank: " + scoreRank);
-			//QuickSort rank = new QuickSort(scoreRank, 0, scoreRank.size());
+			System.out.println("score rank: " + score);
+			
+			int[] scoreRank = new int[score.size()];
+		    int i = 0;
+		    for (Integer n : score) {
+		        scoreRank[i++] = n;
+		    }
+		    
+		    QuickSort rank = new QuickSort();
+		    rank.sort(scoreRank, 0, scoreRank.length-1);
+		    System.out.println(Arrays.toString(scoreRank));
+		}
+			sc.close();
+			
+			
 		}
 	}
