@@ -11,14 +11,14 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		WordCount wordcountZARA = new WordCount("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035");
-		//WordCount wordcountHM = new WordCount("http://www2.hm.com/zh_asia3/ladies.html");
-		WordCount wordcountBurberry = new WordCount("https://tw.burberry.com/");
+//		WordCount wordcountGenquo = new WordCount("https://www.genquo.com/");
+//		WordCount wordcountBurberry = new WordCount("https://tw.burberry.com/");
 		
 		WebPage rootPageZARA = new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "ZARA");
 		WebTree treeZARA = new WebTree(rootPageZARA);
 		
-		WebPage rootPageHM = new WebPage("http://www2.hm.com/zh_asia3/index.html", "H&M");
-		WebTree treeHM = new WebTree(rootPageHM);
+		WebPage rootPageGenquo = new WebPage("https://www.genquo.com/", "Genquo");
+		WebTree treeGenquo = new WebTree(rootPageGenquo);
 		
 		WebPage rootPageBurberry = new WebPage("https://tw.burberry.com/", "Burberry");
 		WebTree treeBurberry = new WebTree(rootPageBurberry);
@@ -26,23 +26,30 @@ public class Main {
 		treeBurberry.root.addChild(new WebNode(new WebPage("https://tw.burberry.com/women/", "女")));
 		treeBurberry.root.children.get(0).addChild(new WebNode(new WebPage("https://tw.burberry.com/womens-coats-jackets/", "所有大衣及外套")));
 		
-		treeHM.root.addChild(new WebNode(new WebPage("http://www2.hm.com/zh_asia3/ladies.html", "女")));
-		treeHM.root.children.get(0).addChild(new WebNode(new WebPage("http://www2.hm.com/zh_asia3/ladies/shop-by-product/jackets-and-coats.html?product-type=ladies_jacketscoats&sort=stock&image-size=small&image=model&offset=0&page-size=540", 
-				"大衣")));
-		treeHM.root.children.get(0).addChild(new WebNode(new WebPage("http://www2.hm.com/zh_asia3/ladies/shop-by-product/blazers-and-waistcoats/blazers.html?sort=stock&image-size=small&image=model&offset=0&page-size=144", 
-				"西裝外套")));
+		treeGenquo.root.addChild(new WebNode(new WebPage("https://www.genquo.com/WOMEN", "女")));
+		treeGenquo.root.children.get(0).addChild(new WebNode(new WebPage("https://www.genquo.com/WOMEN/TOP/JACKET", "外套")));
 		
 		treeZARA.root.addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035", "女")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-outerwear-l1184.html?v1=1179522", "大衣")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-jackets-l1114.html?v1=1178995", "夾克外套")));
 		treeZARA.root.children.get(0).addChild(new WebNode(new WebPage("https://www.zara.com/tw/zt/woman-blazers-l1055.html", "西裝外套")));
 		
-		ArrayList<Integer> countList = new ArrayList<>(); 
+		ArrayList<Integer> countListZARA = new ArrayList<>();
+		ArrayList<Integer> countListBurberry = new ArrayList<>();
+		ArrayList<Integer> countListGenquo = new ArrayList<>();
+		//ArrayList<Integer> countList = new ArrayList<>();
 		
 		while(sc.hasNextLine()) {
 			String name = sc.nextLine();
-				
-			countList = wordcountZARA.countKeyword(name);				
+			
+			System.out.print("zara");
+			countListZARA = wordcountZARA.countKeyword(name);
+			System.out.println(countListZARA);
+			//System.out.print("burberry");
+			//countListBurberry = wordcountBurberry.countKeyword(name);
+			//System.out.print("genquo");
+			//countListGenquo = wordcountGenquo.countKeyword(name);
+			//countList = wordcountZARA.countKeyword(name);
 //				wordcountBurberry.splitKeywordStr(name);
 //				wordcountBurberry.countKeyword(name);
 				
@@ -51,7 +58,7 @@ public class Main {
 //				wordcountZARA.countKeyword(name);
 //				rootPageZARA.setScore(countList);
 			
-			treeZARA.setPostOrderScore(countList);
+			treeZARA.setPostOrderScore(countListZARA);
 			}
 			sc.close();
 			

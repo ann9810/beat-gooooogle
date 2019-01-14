@@ -14,15 +14,17 @@ public class WebPage {
 	public WebPage(String url, String name) {
 		this.url = url;
 		this.name = name;
-		this.count = new WordCount(url);
+		count = new WordCount(url);
 	}
 	
 	ArrayList<Integer> countList = new ArrayList<>();
 	
-	public void setScore(ArrayList<Integer> countList) throws IOException{
+	public void setScore(String keyword) throws IOException{
+		ArrayList<Integer> countList = count.countKeyword(keyword);
+		
 		for(int i = 0; i < countList.size(); i++) {
 			this.score += countList.get(i) * weight[i];
 		}
-		System.out.println(score);
+		System.out.print("setScore :" + score);
 		}
 }

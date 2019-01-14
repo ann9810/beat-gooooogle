@@ -15,7 +15,6 @@ public class WordCount {
 
 	private String urlStr;
 	private String content;
-	
 
 	public ArrayList<String> keywordli;
 	
@@ -64,15 +63,16 @@ public ArrayList<Integer> countKeyword(String keyword) throws IOException {
 		
 		for(int t = 0; t < keywordli.size(); t++) {
 		int count = 0;
-		int i = content.indexOf(keywordli.get(t));
+		String temp = content + "";
+		int i = temp.indexOf(keywordli.get(t));
 		while(i != -1) {
-			i = content.indexOf(keywordli.get(t));
-			content = content.substring(i + keywordli.get(t).length(), content.length());
+			i = temp.indexOf(keywordli.get(t));
+			temp = temp.substring(i + keywordli.get(t).length(), temp.length());
 			count++;
 		}
 		countList.add(count);
 		}
-		System.out.println(countList);
+		//System.out.println(countList);
 		return countList;
 	}
 }
