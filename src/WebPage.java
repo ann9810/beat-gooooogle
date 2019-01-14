@@ -26,6 +26,6 @@ public class WebPage {
 		for(int i = 0; i < countList.size(); i++) {
 			this.score += countList.get(i) * weight[i];
 		}
-		System.out.print("setScore :" + score);
+		System.out.print(countList);
 		}
 }

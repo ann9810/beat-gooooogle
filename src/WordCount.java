@@ -72,7 +72,6 @@ public ArrayList<Integer> countKeyword(String keyword) throws IOException {
 		}
 		countList.add(count);
 		}
-		//System.out.println(countList);
 		return countList;
 	}
 }
