@@ -13,7 +13,7 @@ import org.jsoup.nodes.Document;
 
 public class WordCount {
 
-	private String urlStr;
+	public String urlStr;
 	private String content;
 
 	public ArrayList<String> keywordli;

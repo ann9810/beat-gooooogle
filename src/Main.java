@@ -119,13 +119,12 @@ public class Main {
 		    //用score回推url
 		    for(int i = 0; i < score.length; i++) {
 		    int q = score[i];
-		    if(q==a) {System.out.println("ZARA");}
-		    else if(q==b) {System.out.println("Burberry");}
-		    else if(q==c) {System.out.println("Genquo");}
-		    else if(q==d) {System.out.println("Urban Research");}
-		    else if(q==e) {System.out.println("H&M");}
-		    else if(q==f) {System.out.println("NET");}
-		    
+		    if(q==a) {System.out.println("ZARA: " + wordcountZARA.urlStr);}
+		    else if(q==b) {System.out.println("Burberry: " + wordcountBurberry.urlStr);}
+		    else if(q==c) {System.out.println("Genquo: " + wordcountGenquo.urlStr);}
+		    else if(q==d) {System.out.println("Urban Research: " + wordcountUrbanResearch.urlStr);}
+		    else if(q==e) {System.out.println("H&M: " + wordcountHM.urlStr);}
+		    else if(q==f) {System.out.println("NET: " + wordcountNET.urlStr);}
 		}
 		}
 		sc.close();
