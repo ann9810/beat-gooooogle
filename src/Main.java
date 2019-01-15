@@ -16,9 +16,6 @@ public class Main {
 		ArrayList<Integer> countListHM;
 		ArrayList<Integer> countListNET;
 		
-		ArrayList<Integer> score = new ArrayList<>();
-
-		
 		WordCount wordcountZARA = new WordCount("https://www.zara.com/tw/zt/woman-l1000.html?v1=791035");
 		WordCount wordcountGenquo = new WordCount("https://www.genquo.com/");
 		WordCount wordcountBurberry = new WordCount("https://tw.burberry.com/");
@@ -107,27 +104,30 @@ public class Main {
 			int e = treeHM.root.nodeScore;
 			int f = treeNET.root.nodeScore;
 			
-			score.add(a);
-			score.add(b);
-			score.add(c);
-			score.add(d);
-			score.add(e);
-			score.add(f);
+			int [] score = new int[6];
+			score[0] = a;
+			score[1] = b;
+			score[2] = c;
+			score[3] = d;
+			score[4] = e;
+			score[5] = f;
 			
-			System.out.println("score rank: " + score);
-			
-			int[] scoreRank = new int[score.size()];
-		    int i = 0;
-		    for (Integer n : score) {
-		        scoreRank[i++] = n;
-		    }
+			QuickSort rank = new QuickSort();
+		    rank.sort(score, 0, score.length-1);
+		    System.out.println("score rank: " + Arrays.toString(score));
+		
+		    //用score回推url
+		    for(int i = 0; i < score.length; i++) {
+		    int q = score[i];
+		    if(q==a) {System.out.println("ZARA");}
+		    else if(q==b) {System.out.println("Burberry");}
+		    else if(q==c) {System.out.println("Genquo");}
+		    else if(q==d) {System.out.println("Urban Research");}
+		    else if(q==e) {System.out.println("H&M");}
+		    else if(q==f) {System.out.println("NET");}
 		    
-		    QuickSort rank = new QuickSort();
-		    rank.sort(scoreRank, 0, scoreRank.length-1);
-		    System.out.println(Arrays.toString(scoreRank));
 		}
-			sc.close();
-			
-			
 		}
+		sc.close();
 	}
+}
