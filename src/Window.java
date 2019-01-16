@@ -57,7 +57,8 @@ public class Window extends JFrame {
 		panel.setBounds(0, 0, 902, 504);
 		contentPane.add(panel);
 		
-		JLabel lblNewLabel = new JLabel(new ImageIcon("/Users/casey/Desktop/DS/img/1234.png"));
+		JLabel lblNewLabel = new JLabel(new ImageIcon("/Users/choushinji/git/beat-gooooogle/img/img.png"));
+		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 26));
 		panel.add(lblNewLabel);
 		
 		
@@ -74,22 +75,21 @@ public class Window extends JFrame {
 		contentPane.add(btnSearch);
 		
 		JLabel lblNewLabel_1 = new JLabel("Please enter the space bar between the keywords!");
-		lblNewLabel_1.setBounds(96, 588, 364, 16);
+		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(96, 578, 579, 33);
 		contentPane.add(lblNewLabel_1);
 		btnSearch.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				lblNewLabel_1.setText(textField.getText());
-				textField.setText("");
 				
-				String input = textField.getText();
-				WordCount wCount = new WordCount(input);
-				
-				SecondWindow secondWindow = new SecondWindow();
-				secondWindow.setVisible(true);
-				
+				String keyword = textField.getText();
+				TreeBuild treeBuild = new TreeBuild(keyword);
+				String result = treeBuild.getTree();
+
+				lblNewLabel.setText(result);
+				lblNewLabel.setIcon(null);
+				lblNewLabel_1.setText("Above is the result of searching.");
 				
 			}
 		});

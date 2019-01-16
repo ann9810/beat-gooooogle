@@ -21,7 +21,6 @@ import org.jsoup.Jsoup;
 		public String url;
 		public String content;
 		
-		
 		public GoogleQ(String searchKeyword) {
 			this.searchKeyword = searchKeyword;
 			this.url = "https://www.google.com/search?q=" + searchKeyword + "&oe=utf8&num=50";
