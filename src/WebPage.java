@@ -8,7 +8,7 @@ public class WebPage {
 	public WordCount count;
 	public int score = 0;
 	
-	private int[] weight = {3, 2, 1};
+	private int[] weight = {7,5,4,2,1,1};
 	
 	
 	public WebPage(String url, String name) {
