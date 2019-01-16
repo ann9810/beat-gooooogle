@@ -117,14 +117,14 @@ public class Main {
 		    System.out.println("score rank: " + Arrays.toString(score));
 		
 		    //用score回推url
-		    for(int i = 0; i < score.length; i++) {
+		    for(int i = score.length-1; i >= 0; i--) {
 		    int q = score[i];
-		    if(q==a) {System.out.println("ZARA: " + wordcountZARA.urlStr);}
-		    else if(q==b) {System.out.println("Burberry: " + wordcountBurberry.urlStr);}
-		    else if(q==c) {System.out.println("Genquo: " + wordcountGenquo.urlStr);}
-		    else if(q==d) {System.out.println("Urban Research: " + wordcountUrbanResearch.urlStr);}
-		    else if(q==e) {System.out.println("H&M: " + wordcountHM.urlStr);}
-		    else if(q==f) {System.out.println("NET: " + wordcountNET.urlStr);}
+		    if(q==a) {System.out.println("ZARA: " + wordcountZARA.urlStr);a = 1;}
+		    else if(q==b) {System.out.println("Burberry: " + wordcountBurberry.urlStr);b = 1;}
+		    else if(q==c) {System.out.println("Genquo: " + wordcountGenquo.urlStr);c = 1;}
+		    else if(q==d) {System.out.println("Urban Research: " + wordcountUrbanResearch.urlStr);d = 1;}
+		    else if(q==e) {System.out.println("H&M: " + wordcountHM.urlStr);e = 1;}
+		    else if(q==f) {System.out.println("NET: " + wordcountNET.urlStr);f = 1;}
 		}
 		}
 		sc.close();
