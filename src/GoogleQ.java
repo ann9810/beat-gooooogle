@@ -23,7 +23,7 @@ public class GoogleQ {
 
     public GoogleQ(String searchKeyword) {
         this.searchKeyword = searchKeyword;
-        this.url = "https://www.google.com/search?q=" + searchKeyword + "&oe=utf8&num=50";
+        this.url = "http://www.google.com/search?q=" + searchKeyword + "&oe=utf8&num=50";
     }
 
     private String fetchContent() throws IOException {
